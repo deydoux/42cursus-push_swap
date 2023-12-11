@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:09:42 by deydoux           #+#    #+#             */
-/*   Updated: 2023/12/11 06:49:32 by deydoux          ###   ########.fr       */
+/*   Updated: 2023/12/11 17:35:48 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+void	free_split(char **split);
 int		ft_abs(int j);
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);

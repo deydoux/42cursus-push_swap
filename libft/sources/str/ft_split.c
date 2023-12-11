@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 11:21:57 by deydoux           #+#    #+#             */
-/*   Updated: 2023/11/13 16:24:44 by deydoux          ###   ########.fr       */
+/*   Updated: 2023/12/11 17:26:01 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,22 @@ static size_t	split_size(char const *s, char c)
 	return (size);
 }
 
+void	free_split(char **split)
+{
+	size_t	i;
+
+	i = 0;
+	while (split[i])
+		free(split[i++]);
+	free(split);
+}
+
 static int	create_str(char **split, size_t *i, char const *s, int end)
 {
 	split[*i] = ft_substr(s, 0, end);
 	if (!split[*i])
 	{
-		while ((*i)--)
-			free(split[*i]);
-		free(split);
+		free_split(split);
 		return (0);
 	}
 	(*i)++;

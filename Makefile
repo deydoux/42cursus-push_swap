@@ -27,7 +27,7 @@ $(OBJECTS_DIR)/%.o	:	$(SOURCES_DIR)/%.c
 	@$(MKDIR) $(@D)
 	$(CC) $(CFLAGS) -o $@ -c	$<
 
-$(NAME)				:	$(LIBFT) $(OBJECTS)
+$(NAME)				:	$(OBJECTS) $(LIBFT)
 	@$(MKDIR) $(@D)
 	$(CC) $(CFLAGS) -o $@ $^
 

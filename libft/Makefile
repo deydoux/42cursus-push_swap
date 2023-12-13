@@ -66,7 +66,7 @@ SOURCES				=	ft_printf/ft_printf.c		\
 						str/ft_substr.c
 
 CC					=	cc
-CFLAGS				=	-Wall -Wextra -Werror -MMD -I $(INCLUDE_DIR)
+CFLAGS				=	-Wall -Wextra -Werror -MMD -I $(INCLUDE_DIR) -g
 AR					=	ar
 ARFLAGS				=	-c -r -s
 RM					=	rm -rf

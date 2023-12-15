@@ -5,10 +5,11 @@ SOURCES_DIR			=	sources
 INCLUDE_DIR			=	include
 OBJECTS_DIR			=	.objects
 
-SOURCES				=	push_swap.c
+SOURCES				=	parse_args.c	\
+						push_swap.c
 
 CC					=	cc
-CFLAGS				=	-Wall -Wextra -Werror -MMD -I $(INCLUDE_DIR)
+CFLAGS				=	-Wall -Wextra -Werror -MMD -I $(INCLUDE_DIR) -g
 RM					=	rm -rf
 MKDIR				=	mkdir -p
 

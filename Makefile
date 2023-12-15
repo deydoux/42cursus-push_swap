@@ -9,7 +9,7 @@ SOURCES				=	parse_args.c	\
 						push_swap.c
 
 CC					=	cc
-CFLAGS				=	-Wall -Wextra -Werror -MMD -I $(INCLUDE_DIR) -g
+CFLAGS				=	-Wall -Wextra -Werror -MMD -I $(INCLUDE_DIR)
 RM					=	rm -rf
 MKDIR				=	mkdir -p
 

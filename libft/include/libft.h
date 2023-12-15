@@ -6,12 +6,13 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:09:42 by deydoux           #+#    #+#             */
-/*   Updated: 2023/12/11 17:35:48 by deydoux          ###   ########.fr       */
+/*   Updated: 2023/12/13 23:45:11 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <limits.h>
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>

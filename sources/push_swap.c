@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:28:40 by deydoux           #+#    #+#             */
-/*   Updated: 2023/12/15 19:57:46 by deydoux          ###   ########.fr       */
+/*   Updated: 2023/12/15 20:11:26 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int argc, char **argv)
 	ft_lstiter(a, &print_n_ptr);
 	if (error)
 	{
-		ft_lstclear(&a, NULL);
+		ft_lstclear(&a, free);
 		ft_putstr_fd("Error\n", 2);
 		exit(EXIT_FAILURE);
 	}

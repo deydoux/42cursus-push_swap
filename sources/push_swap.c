@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:28:40 by deydoux           #+#    #+#             */
-/*   Updated: 2023/12/15 20:22:13 by deydoux          ###   ########.fr       */
+/*   Updated: 2023/12/16 19:31:28 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 
 int	main(int argc, char **argv)
 {
-	bool	error;
-	t_list	*a;
+	bool		error;
+	t_stacks	stacks;
 
 	error = false;
-	a = parse_args(argc - 1, argv + 1, &error);
-	if (error)
+	stacks.a = parse_args(argc - 1, argv + 1, &error);
+	stacks.b = NULL;
+	if (!error)
 	{
-		ft_lstclear(&a, free);
-		ft_putstr_fd("Error\n", 2);
-		exit(EXIT_FAILURE);
+
 	}
-	exit(EXIT_SUCCESS);
+	else
+		ft_putstr_fd("Error\n", 2);
+	ft_lstclear(&stacks.a, free);
+	ft_lstclear(&stacks.b, free);
+	exit(error);
 }

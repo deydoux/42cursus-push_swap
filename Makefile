@@ -6,7 +6,8 @@ INCLUDE_DIR			=	include
 OBJECTS_DIR			=	.objects
 
 SOURCES				=	parse_args.c	\
-						push_swap.c
+						push_swap.c		\
+						swap.c
 
 CC					=	cc
 CFLAGS				=	-Wall -Wextra -Werror -MMD -I $(INCLUDE_DIR)

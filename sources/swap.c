@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 07:23:10 by deydoux           #+#    #+#             */
-/*   Updated: 2023/12/19 15:25:10 by deydoux          ###   ########.fr       */
+/*   Created: 2023/12/18 13:54:35 by deydoux           #+#    #+#             */
+/*   Updated: 2023/12/19 15:24:55 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include "libft.h"
-# include <stdbool.h>
+#include "push_swap.h"
 
-typedef struct s_stacks
+static void	swap(t_list *stack)
 {
-	t_list	*a;
-	t_list	*b;
-}			t_stacks;
+	void	*content;
 
-t_list	*parse_args(int argc, char **argv, bool *error);
+	if (!stack || !stack->next)
+		return ;
+	content = stack->content;
+	stack->content = stack->next->content;
+	stack->next->content = content;
+}
 
-void	sa(t_list *stack);
-void	sb(t_list *stack);
+void	sa(t_list *stack)
+{
+	swap(stack);
+	ft_putstr_fd("sa\n", 1);
+}
 
-#endif
+void	sb(t_list *stack)
+{
+	swap(stack);
+	ft_putstr_fd("sb\n", 1);
+}

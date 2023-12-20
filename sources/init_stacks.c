@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   init_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 11:28:40 by deydoux           #+#    #+#             */
-/*   Updated: 2023/12/20 14:07:34 by deydoux          ###   ########.fr       */
+/*   Created: 2023/12/19 15:55:04 by deydoux           #+#    #+#             */
+/*   Updated: 2023/12/20 13:58:21 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+t_stacks	init_stacks(int argc, char **argv, bool *error)
 {
-	bool		error;
 	t_stacks	stacks;
 
-	error = false;
-	stacks = init_stacks(argc - 1, argv + 1, &error);
-	if (!error)
+	stacks.a = malloc(sizeof(t_list *));
+	stacks.b = malloc(sizeof(t_list *));
+	if (!stacks.a || !stacks.b)
 	{
-
+		*error = true;
+		return (stacks);
 	}
-	else
-		ft_putstr_fd("Error\n", 2);
-	free_stacks(stacks);
-	exit(error);
+	*stacks.a = parse_args(argc, argv, error);
+	return (stacks);
 }

@@ -6,64 +6,64 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 13:11:06 by deydoux           #+#    #+#             */
-/*   Updated: 2023/12/15 20:09:16 by deydoux          ###   ########.fr       */
+/*   Updated: 2023/12/21 15:02:09 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_list	*parse_arg(char *arg)
+static bool	atoi_safe(char *s, int *n)
 {
-	int				*n;
 	unsigned int	u;
-	t_list			*new;
 
-	n = malloc(sizeof(int));
-	if (!n)
-		return (NULL);
+	if (!s)
+		return (true);
 	*n = 1;
 	u = 0;
-	new = NULL;
-	if (*arg == '-' || *arg == '+')
-		*n -= 2 * (*arg++ == '-');
-	while (ft_isdigit(*arg))
+	if (*s == '-' || *s == '+')
+		*n -= 2 * (*s++ == '-');
+	while (ft_isdigit(*s))
 	{
-		u = u * 10 + *arg++ - '0';
+		u = u * 10 + *s++ - '0';
 		if (u > INT_MAX && (*n != -1 || u != (unsigned int)INT_MAX + 1))
-			return (NULL);
+			return (true);
 	}
-	if (!*arg)
-	{
-		*n *= u;
-		new = ft_lstnew(n);
-	}
-	return (new);
+	*n *= u;
+	return (*s != 0);
 }
 
-t_list	*parse_args(int argc, char **argv, bool *error)
+static bool	new_elem(char *arg, t_list **stack)
+{
+	t_elem	*elem;
+	t_list	*new;
+
+	elem = malloc(sizeof(t_elem));
+	if (!elem || atoi_safe(arg, &elem->value))
+		return (true);
+	new = ft_lstnew(elem);
+	if (!new)
+		return (true);
+	ft_lstadd_back(stack, new);
+	return (false);
+}
+
+bool	parse_args(int argc, char **argv, t_list **stack)
 {
 	char	**splitted_args;
 	size_t	i;
-	t_list	*new;
-	t_list	*stack;
+	bool	error;
 
-	if (!argc || *error)
-		return (NULL);
+	if (!argc)
+		return (false);
 	splitted_args = ft_split(*argv, ' ');
 	if (!splitted_args)
-	{
-		*error = true;
-		return (NULL);
-	}
+		return (true);
 	i = 0;
-	stack = NULL;
-	while (splitted_args[i] && !*error)
-	{
-		new = parse_arg(splitted_args[i++]);
-		*error = !new;
-		ft_lstadd_back(&stack, new);
-	}
+	error = 0;
+	while (splitted_args[i] && !error)
+		error = new_elem(splitted_args[i++], stack);
 	free_split(splitted_args);
-	ft_lstadd_back(&stack, parse_args(argc - 1, argv + 1, error));
-	return (stack);
+	if (error)
+		return (true);
+	return (parse_args(argc - 1, argv + 1, stack));
 }

@@ -30,7 +30,7 @@ $(OBJECTS_DIR)/%.o	:	$(SOURCES_DIR)/%.c
 	@$(MKDIR) $(@D)
 	$(CC) $(CFLAGS) -o $@ -c	$<
 
-$(NAME)				:	$(OBJECTS) $(LIBFT)
+$(NAME)				:	$(LIBFT) $(OBJECTS)
 	@$(MKDIR) $(@D)
 	$(CC) $(CFLAGS) -o $@ $^
 
@@ -38,9 +38,9 @@ clean				:
 	$(MAKE) -C $(LIBFT_DIR) $@
 	$(RM) $(OBJECTS_DIR)
 
-fclean				:	clean
+fclean				:
 	$(MAKE) -C $(LIBFT_DIR) $@
-	$(RM) $(NAME)
+	$(RM) $(OBJECTS_DIR) $(NAME)
 
 re					:	fclean all
 

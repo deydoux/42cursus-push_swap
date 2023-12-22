@@ -89,8 +89,8 @@ $(NAME)				:	$(OBJECTS)
 clean				:
 	$(RM) $(OBJECTS_DIR)
 
-fclean				:	clean
-	$(RM) $(NAME)
+fclean				:
+	$(RM) $(OBJECTS_DIR) $(NAME)
 
 re					:	fclean all
 

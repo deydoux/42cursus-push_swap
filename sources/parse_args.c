@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 13:11:06 by deydoux           #+#    #+#             */
-/*   Updated: 2023/12/21 15:02:09 by deydoux          ###   ########.fr       */
+/*   Updated: 2023/12/23 14:18:54 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,29 @@ static bool	atoi_safe(char *s, int *n)
 	return (*s != 0);
 }
 
+static bool	is_duplicate(int value, t_list *stack)
+{
+	while (stack)
+	{
+		if (((t_elem *)stack->content)->value == value)
+			return (true);
+		stack = stack->next;
+	}
+	return (false);
+}
+
 static bool	new_elem(char *arg, t_list **stack)
 {
+	int		value;
 	t_elem	*elem;
 	t_list	*new;
 
-	elem = malloc(sizeof(t_elem));
-	if (!elem || atoi_safe(arg, &elem->value))
+	if (atoi_safe(arg, &value) || is_duplicate(value, *stack))
 		return (true);
+	elem = malloc(sizeof(t_elem));
+	if (!elem)
+		return (true);
+	elem->value = value;
 	new = ft_lstnew(elem);
 	if (!new)
 		return (true);

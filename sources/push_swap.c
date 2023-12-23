@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:28:40 by deydoux           #+#    #+#             */
-/*   Updated: 2023/12/21 15:05:58 by deydoux          ###   ########.fr       */
+/*   Updated: 2023/12/23 15:56:37 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 	exit_status = init_stacks(argc - 1, argv + 1, &stacks);
 	if (!exit_status)
 	{
-
+		index_stack(*stacks.a);
 	}
 	else
 		ft_putstr_fd("Error\n", 2);

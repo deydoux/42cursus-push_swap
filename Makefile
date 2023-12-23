@@ -6,6 +6,7 @@ INCLUDE_DIR			=	include
 OBJECTS_DIR			=	.objects
 
 SOURCES				=	free_stacks.c	\
+						index_stack.c	\
 						init_stacks.c	\
 						parse_args.c	\
 						push_swap.c

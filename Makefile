@@ -5,13 +5,14 @@ SOURCES_DIR			=	sources
 INCLUDE_DIR			=	include
 OBJECTS_DIR			=	.objects
 
-SOURCES				=	free_stacks.c		\
-						index_stack.c		\
-						init_stacks.c		\
-						operations/push.c	\
-						operations/rotate.c	\
-						operations/swap.c	\
-						parse_args.c		\
+SOURCES				=	free_stacks.c				\
+						index_stack.c				\
+						init_stacks.c				\
+						operations/push.c			\
+						operations/reverse_rotate.c	\
+						operations/rotate.c			\
+						operations/swap.c			\
+						parse_args.c				\
 						push_swap.c
 
 CC					=	cc

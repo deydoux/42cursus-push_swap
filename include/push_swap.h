@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 07:23:10 by deydoux           #+#    #+#             */
-/*   Updated: 2023/12/24 15:17:04 by deydoux          ###   ########.fr       */
+/*   Updated: 2023/12/24 15:25:11 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ bool	pb(t_stacks stacks);
 bool	ra(t_stacks stacks);
 bool	rb(t_stacks stacks);
 bool	rr(t_stacks stacks);
+bool	rra(t_stacks stacks);
+bool	rrb(t_stacks stacks);
+bool	rrr(t_stacks stacks);
 bool	sa(t_stacks stacks);
 bool	sb(t_stacks stacks);
 bool	ss(t_stacks stacks);

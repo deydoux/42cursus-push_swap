@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 13:18:01 by deydoux           #+#    #+#             */
-/*   Updated: 2023/12/24 13:47:34 by deydoux          ###   ########.fr       */
+/*   Updated: 2023/12/24 15:13:38 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,13 @@
 
 static bool	swap(t_list **stack)
 {
-	t_list	*first;
-	t_list	*second;
-	t_list	*third;
+	t_list	*start;
 
 	if (!*stack || !(*stack)->next)
 		return (true);
-	first = *stack;
-	second = first->next;
-	third = second->next;
-	*stack = second;
-	second->next = first;
-	first->next = third;
+	start = (*stack)->next;
+	(*stack)->next = start->next;
+	ft_lstadd_front(stack, start);
 	return (false);
 }
 

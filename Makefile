@@ -9,6 +9,7 @@ SOURCES				=	free_stacks.c		\
 						index_stack.c		\
 						init_stacks.c		\
 						operations/push.c	\
+						operations/rotate.c	\
 						operations/swap.c	\
 						parse_args.c		\
 						push_swap.c

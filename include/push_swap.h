@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 07:23:10 by deydoux           #+#    #+#             */
-/*   Updated: 2023/12/23 15:28:44 by deydoux          ###   ########.fr       */
+/*   Updated: 2023/12/24 13:49:02 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,9 @@ void	free_stacks(t_stacks stacks);
 void	index_stack(t_list *stack);
 bool	init_stacks(int argc, char **argv, t_stacks *stacks);
 bool	parse_args(int argc, char **argv, t_list **stack);
+
+bool	sa(t_stacks stacks);
+bool	sb(t_stacks stacks);
+bool	ss(t_stacks stacks);
 
 #endif

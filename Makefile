@@ -14,7 +14,9 @@ SOURCES				=	free_stacks.c				\
 						operations/rotate.c			\
 						operations/swap.c			\
 						parse_args.c				\
-						push_swap.c
+						push_swap.c					\
+						sort_stack.c				\
+						sorting/sort_three.c
 
 CC					=	cc
 CFLAGS				=	-Wall -Wextra -Werror -MMD -I $(INCLUDE_DIR)

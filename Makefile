@@ -8,6 +8,7 @@ OBJECTS_DIR			=	.objects
 SOURCES				=	free_stacks.c				\
 						index_stack.c				\
 						init_stacks.c				\
+						is_sorted_stack.c			\
 						operations/push.c			\
 						operations/reverse_rotate.c	\
 						operations/rotate.c			\

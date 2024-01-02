@@ -6,11 +6,26 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:28:40 by deydoux           #+#    #+#             */
-/*   Updated: 2023/12/29 18:18:46 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/02 23:35:10 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	sort_stack(t_stacks stacks)
+{
+	size_t	size;
+
+	size = ft_lstsize(*stacks.a);
+	if (size == 2)
+	{
+		sa(stacks);
+		return ;
+	}
+	index_stack(*stacks.a);
+	if (size == 3)
+		sort_three(stacks);
+}
 
 int	main(int argc, char **argv)
 {

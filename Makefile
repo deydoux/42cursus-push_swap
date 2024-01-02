@@ -15,7 +15,6 @@ SOURCES				=	free_stacks.c				\
 						operations/swap.c			\
 						parse_args.c				\
 						push_swap.c					\
-						sort_stack.c				\
 						sorting/sort_three.c
 
 CC					=	cc

@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 18:46:04 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/03 03:25:29 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/03 17:58:10 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ static void	swap_sequence(t_stacks stacks, bool *unsort_b)
 			&& ((t_elem *)next->content)->index == 0)
 		{
 			if (*unsort_b)
-				ss(stacks);
+				swap_stacks(stacks);
 			else
-				sa(stacks);
+				swap_a(stacks);
 			*unsort_b = false;
 			return ;
 		}
@@ -47,9 +47,9 @@ static bool	rotate_sequence(t_stacks stacks, bool unsort_b)
 		&& ((t_elem *)(*stacks.a)->next->content)->index == 0)
 	{
 		if (unsort_b)
-			rr(stacks);
+			rotate_stacks(stacks);
 		else
-			ra(stacks);
+			rotate_a(stacks);
 		return (true);
 	}
 	return (false);
@@ -62,9 +62,9 @@ static void	reverse_rotate_sequence(t_stacks stacks, bool unsort_b)
 		&& ((t_elem *)(*stacks.a)->next->content)->index == 2)
 	{
 		if (unsort_b)
-			rrr(stacks);
+			reverse_rotate_stacks(stacks);
 		else
-			rra(stacks);
+			reverse_rotate_a(stacks);
 	}
 }
 

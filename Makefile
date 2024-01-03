@@ -5,18 +5,18 @@ SOURCES_DIR			=	sources
 INCLUDE_DIR			=	include
 OBJECTS_DIR			=	.objects
 
-SOURCES				=	free_stacks.c				\
-						init_stacks.c				\
-						is_sorted_stack.c			\
-						operations/push.c			\
-						operations/reverse_rotate.c	\
-						operations/rotate.c			\
-						operations/swap.c			\
-						parse_args.c				\
-						push_swap.c					\
-						sort/index_stack.c			\
-						sort/sort_five.c			\
-						sort/sort_three.c
+SOURCES				=	free_stacks.c			\
+						init_stacks.c			\
+						is_sorted_stack.c		\
+						parse_args.c			\
+						push_stack.c			\
+						push_swap.c				\
+						reverse_rotate_stacks.c	\
+						rotate_stacks.c			\
+						sort/index_stack.c		\
+						sort/sort_five.c		\
+						sort/sort_three.c		\
+						swap_stacks.c
 
 CC					=	cc
 CFLAGS				=	-Wall -Wextra -Werror -MMD -I $(INCLUDE_DIR) -g

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   rotate_stacks.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 14:01:18 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/03 02:17:33 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/03 17:57:27 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,19 @@ static void	rotate(t_list **stack)
 	ft_lstadd_back(stack, last);
 }
 
-void	ra(t_stacks stacks)
+void	rotate_a(t_stacks stacks)
 {
 	ft_putstr_fd("ra\n", 1);
 	rotate(stacks.a);
 }
 
-void	rb(t_stacks stacks)
+void	rotate_b(t_stacks stacks)
 {
 	ft_putstr_fd("rb\n", 1);
 	rotate(stacks.b);
 }
 
-void	rr(t_stacks stacks)
+void	rotate_stacks(t_stacks stacks)
 {
 	ft_putstr_fd("rr\n", 1);
 	rotate(stacks.a);

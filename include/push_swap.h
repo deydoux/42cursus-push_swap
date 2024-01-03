@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 07:23:10 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/03 02:12:15 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/03 17:58:15 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,16 @@ bool	parse_args(int argc, char **argv, t_list **stack);
 void	sort_five(t_stacks stacks);
 void	sort_three(t_stacks stacks);
 
-void	pa(t_stacks stacks);
-void	pb(t_stacks stacks);
-void	ra(t_stacks stacks);
-void	rb(t_stacks stacks);
-void	rr(t_stacks stacks);
-void	rra(t_stacks stacks);
-void	rrb(t_stacks stacks);
-void	rrr(t_stacks stacks);
-void	sa(t_stacks stacks);
-void	sb(t_stacks stacks);
-void	ss(t_stacks stacks);
+void	push_a(t_stacks stacks);
+void	push_b(t_stacks stacks);
+void	rotate_a(t_stacks stacks);
+void	rotate_b(t_stacks stacks);
+void	rotate_stacks(t_stacks stacks);
+void	reverse_rotate_a(t_stacks stacks);
+void	reverse_rotate_b(t_stacks stacks);
+void	reverse_rotate_stacks(t_stacks stacks);
+void	swap_a(t_stacks stacks);
+void	swap_b(t_stacks stacks);
+void	swap_stacks(t_stacks stacks);
 
 #endif

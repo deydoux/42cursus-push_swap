@@ -1,45 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   swap_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/24 15:19:04 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/03 02:17:31 by deydoux          ###   ########.fr       */
+/*   Created: 2023/12/24 13:18:01 by deydoux           #+#    #+#             */
+/*   Updated: 2024/01/03 17:58:15 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	reverse_rotate(t_list **stack)
+static void	swap(t_list **stack)
 {
-	t_list	*last;
+	t_list	*start;
 
 	if (!*stack || !(*stack)->next)
 		return ;
-	last = *stack;
-	while (last->next->next)
-		last = last->next;
-	ft_lstadd_front(stack, last->next);
-	last->next = NULL;
+	start = (*stack)->next;
+	(*stack)->next = start->next;
+	ft_lstadd_front(stack, start);
 }
 
-void	rra(t_stacks stacks)
+void	swap_a(t_stacks stacks)
 {
-	ft_putstr_fd("rra\n", 1);
-	reverse_rotate(stacks.a);
+	ft_putstr_fd("sa\n", 1);
+	swap(stacks.a);
 }
 
-void	rrb(t_stacks stacks)
+void	swap_b(t_stacks stacks)
 {
-	ft_putstr_fd("rrb\n", 1);
-	reverse_rotate(stacks.b);
+	ft_putstr_fd("sb\n", 1);
+	swap(stacks.b);
 }
 
-void	rrr(t_stacks stacks)
+void	swap_stacks(t_stacks stacks)
 {
-	ft_putstr_fd("rrr\n", 1);
-	reverse_rotate(stacks.a);
-	reverse_rotate(stacks.b);
+	ft_putstr_fd("ss\n", 1);
+	swap(stacks.a);
+	swap(stacks.b);
 }

@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 18:46:04 by deydoux           #+#    #+#             */
-/*   Updated: 2023/12/30 14:51:05 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/03 01:33:29 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ static bool	rra_sequence(t_list *stack)
 
 void	sort_three(t_stacks stacks)
 {
+	index_stack(*stacks.a);
 	if (sa_sequence(*stacks.a))
 		sa(stacks);
 	if (ra_sequence(*stacks.a))

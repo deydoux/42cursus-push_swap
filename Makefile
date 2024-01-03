@@ -15,10 +15,11 @@ SOURCES				=	free_stacks.c				\
 						operations/swap.c			\
 						parse_args.c				\
 						push_swap.c					\
+						sorting/sort_five.c			\
 						sorting/sort_three.c
 
 CC					=	cc
-CFLAGS				=	-Wall -Wextra -Werror -MMD -I $(INCLUDE_DIR)
+CFLAGS				=	-Wall -Wextra -Werror -MMD -I $(INCLUDE_DIR) -g
 RM					=	rm -rf
 MKDIR				=	mkdir -p
 

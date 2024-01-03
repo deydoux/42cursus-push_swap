@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 07:23:10 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/03 02:03:36 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/03 02:12:15 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_stacks
 	t_list	**b;
 }			t_stacks;
 
-typedef bool	(*t_operation)(t_stacks);
+typedef void	(*t_operation)(t_stacks);
 
 void	free_stacks(t_stacks stacks);
 void	index_stack(t_list *stack);
@@ -37,16 +37,16 @@ bool	parse_args(int argc, char **argv, t_list **stack);
 void	sort_five(t_stacks stacks);
 void	sort_three(t_stacks stacks);
 
-bool	pa(t_stacks stacks);
-bool	pb(t_stacks stacks);
-bool	ra(t_stacks stacks);
-bool	rb(t_stacks stacks);
-bool	rr(t_stacks stacks);
-bool	rra(t_stacks stacks);
-bool	rrb(t_stacks stacks);
-bool	rrr(t_stacks stacks);
-bool	sa(t_stacks stacks);
-bool	sb(t_stacks stacks);
-bool	ss(t_stacks stacks);
+void	pa(t_stacks stacks);
+void	pb(t_stacks stacks);
+void	ra(t_stacks stacks);
+void	rb(t_stacks stacks);
+void	rr(t_stacks stacks);
+void	rra(t_stacks stacks);
+void	rrb(t_stacks stacks);
+void	rrr(t_stacks stacks);
+void	sa(t_stacks stacks);
+void	sb(t_stacks stacks);
+void	ss(t_stacks stacks);
 
 #endif

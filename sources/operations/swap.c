@@ -6,56 +6,38 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 13:18:01 by deydoux           #+#    #+#             */
-/*   Updated: 2023/12/24 15:13:38 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/03 02:18:24 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static bool	swap(t_list **stack)
+static void	swap(t_list **stack)
 {
 	t_list	*start;
 
 	if (!*stack || !(*stack)->next)
-		return (true);
+		return ;
 	start = (*stack)->next;
 	(*stack)->next = start->next;
 	ft_lstadd_front(stack, start);
-	return (false);
 }
 
-bool	sa(t_stacks stacks)
+void	sa(t_stacks stacks)
 {
-	bool	error;
-
-	error = swap(stacks.a);
-	if (!error)
-		ft_putstr_fd("sa\n", 1);
-	return (error);
+	ft_putstr_fd("sa\n", 1);
+	swap(stacks.a);
 }
 
-bool	sb(t_stacks stacks)
+void	sb(t_stacks stacks)
 {
-	bool	error;
-
-	error = swap(stacks.b);
-	if (!error)
-		ft_putstr_fd("sb\n", 1);
-	return (error);
+	ft_putstr_fd("sb\n", 1);
+	swap(stacks.b);
 }
 
-bool	ss(t_stacks stacks)
+void	ss(t_stacks stacks)
 {
-	bool	a_error;
-	bool	b_error;
-
-	a_error = swap(stacks.a);
-	b_error = swap(stacks.b);
-	if (!a_error && !b_error)
-		ft_putstr_fd("ss\n", 1);
-	else if (!a_error)
-		ft_putstr_fd("sa\n", 1);
-	else if (!b_error)
-		ft_putstr_fd("sb\n", 1);
-	return (a_error || b_error);
+	ft_putstr_fd("ss\n", 1);
+	swap(stacks.a);
+	swap(stacks.b);
 }

@@ -19,7 +19,7 @@ SOURCES				=	free_stacks.c			\
 						swap_stacks.c
 
 CC					=	cc
-CFLAGS				=	-Wall -Wextra -Werror -MMD -I $(INCLUDE_DIR) -g
+CFLAGS				=	-Wall -Wextra -Werror -MMD -I $(INCLUDE_DIR)
 RM					=	rm -rf
 MKDIR				=	mkdir -p
 

@@ -6,7 +6,6 @@ INCLUDE_DIR			=	include
 OBJECTS_DIR			=	.objects
 
 SOURCES				=	free_stacks.c				\
-						index_stack.c				\
 						init_stacks.c				\
 						is_sorted_stack.c			\
 						operations/push.c			\
@@ -15,8 +14,9 @@ SOURCES				=	free_stacks.c				\
 						operations/swap.c			\
 						parse_args.c				\
 						push_swap.c					\
-						sorting/sort_five.c			\
-						sorting/sort_three.c
+						sort/index_stack.c			\
+						sort/sort_five.c			\
+						sort/sort_three.c
 
 CC					=	cc
 CFLAGS				=	-Wall -Wextra -Werror -MMD -I $(INCLUDE_DIR) -g

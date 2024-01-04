@@ -13,13 +13,14 @@ SOURCES				=	free_stacks.c			\
 						push_swap.c				\
 						reverse_rotate_stacks.c	\
 						rotate_stacks.c			\
+						sort/chunks_sort.c		\
 						sort/index_stack.c		\
 						sort/sort_five.c		\
 						sort/sort_three.c		\
 						swap_stacks.c
 
 CC					=	cc
-CFLAGS				=	-Wall -Wextra -Werror -MMD -I $(INCLUDE_DIR)
+CFLAGS				=	-Wall -Wextra -Werror -MMD -I $(INCLUDE_DIR) -g
 RM					=	rm -rf
 MKDIR				=	mkdir -p
 
@@ -38,7 +39,7 @@ $(OBJECTS_DIR)/%.o	:	$(SOURCES_DIR)/%.c
 	@$(MKDIR) $(@D)
 	$(CC) $(CFLAGS) -o $@ -c	$<
 
-$(NAME)				:	$(LIBFT) $(OBJECTS)
+$(NAME)				:	$(OBJECTS) $(LIBFT)
 	@$(MKDIR) $(@D)
 	$(CC) $(CFLAGS) -o $@ $^
 

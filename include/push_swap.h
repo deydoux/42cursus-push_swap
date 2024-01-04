@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 07:23:10 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/03 18:13:26 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/04 18:46:34 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define PUSH_SWAP_H
 # include "libft.h"
 # include <stdbool.h>
+
+# define MIN_CHUNK_SIZE 20
+# define MAX_CHUNKS 11
 
 typedef struct s_elem
 {
@@ -29,6 +32,7 @@ typedef struct s_stacks
 
 typedef void	(*t_operation)(t_stacks);
 
+void	chunks_sort(t_stacks stacks);
 void	free_stacks(t_stacks stacks);
 void	index_stack(t_list *stack);
 bool	init_stacks(int argc, char **argv, t_stacks *stacks);

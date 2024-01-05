@@ -4,10 +4,9 @@ UTILS_NAME			=	push_swap_utils.a
 SUB_SOURCES_DIR		=	push_swap
 UTILS_SOURCES_DIR	=	utils
 
-SOURCES				=	chunks_sort.c		\
-						elem_greater_than.c	\
+SOURCES				=	chunk_stack.c		\
+						chunks_sort.c		\
 						index_stack.c		\
-						min_elem.c			\
 						push_swap.c			\
 						sort_five.c			\
 						sort_three.c

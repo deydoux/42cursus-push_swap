@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 07:23:10 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/05 22:37:28 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/05 22:50:12 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef void	(*t_operation)(t_stacks);
 
 void	chunk_stack(size_t n, size_t size, t_stacks stacks);
 void	chunks_sort(t_stacks stacks);
+t_list	*elem_greater_than(int value, t_list *stack);
 void	sort_five(t_stacks stacks);
 void	sort_three(t_stacks stacks, bool *b_sorted);
 

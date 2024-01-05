@@ -6,11 +6,11 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 17:51:57 by deydoux           #+#    #+#             */
-/*   Updated: 2023/12/29 17:56:49 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/05 22:40:04 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_utils.h"
 
 bool	is_sorted_stack(t_list *stack)
 {

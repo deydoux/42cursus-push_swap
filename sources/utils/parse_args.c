@@ -6,11 +6,11 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 13:11:06 by deydoux           #+#    #+#             */
-/*   Updated: 2023/12/23 14:18:54 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/05 22:40:06 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_utils.h"
 
 static bool	atoi_safe(char *s, int *n)
 {

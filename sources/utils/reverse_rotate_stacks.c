@@ -6,11 +6,11 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 15:19:04 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/03 17:56:48 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/05 22:40:11 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_utils.h"
 
 static void	reverse_rotate(t_list **stack)
 {

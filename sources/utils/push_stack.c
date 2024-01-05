@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stacks.c                                      :+:      :+:    :+:   */
+/*   push_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/20 14:00:57 by deydoux           #+#    #+#             */
-/*   Updated: 2023/12/21 15:04:27 by deydoux          ###   ########.fr       */
+/*   Created: 2023/12/24 13:33:21 by deydoux           #+#    #+#             */
+/*   Updated: 2024/01/05 22:40:09 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_utils.h"
 
-void	free_stacks(t_stacks stacks)
+static void	push(t_list **src, t_list **dst)
 {
-	ft_lstclear(stacks.a, free);
-	ft_lstclear(stacks.b, free);
-	free(stacks.a);
-	free(stacks.b);
+	t_list	*new;
+
+	if (!*src)
+		return ;
+	new = *src;
+	*src = (*src)->next;
+	ft_lstadd_front(dst, new);
+}
+
+void	push_a(t_stacks stacks)
+{
+	ft_putstr_fd("pa\n", 1);
+	push(stacks.b, stacks.a);
+}
+
+void	push_b(t_stacks stacks)
+{
+	ft_putstr_fd("pb\n", 1);
+	push(stacks.a, stacks.b);
 }

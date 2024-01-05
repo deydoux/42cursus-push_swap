@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 22:35:42 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/05 22:37:56 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/05 23:16:46 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ typedef struct s_stacks
 }			t_stacks;
 
 void	free_stacks(t_stacks stacks);
-void	index_stack(t_list *stack);
 bool	init_stacks(int argc, char **argv, t_stacks *stacks);
 bool	is_sorted_stack(t_list *stack);
 bool	parse_args(int argc, char **argv, t_list **stack);

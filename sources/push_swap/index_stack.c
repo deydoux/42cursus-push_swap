@@ -6,26 +6,11 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 14:34:00 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/05 22:50:15 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/05 23:14:10 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static t_list	*min_elem(t_list *stack)
-{
-	t_list	*min;
-
-	min = stack;
-	stack = stack->next;
-	while (stack)
-	{
-		if (((t_elem *)stack->content)->value < ((t_elem *)min->content)->value)
-			min = stack;
-		stack = stack->next;
-	}
-	return (min);
-}
 
 void	index_stack(t_list *stack)
 {

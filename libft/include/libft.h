@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:09:42 by deydoux           #+#    #+#             */
-/*   Updated: 2023/12/29 17:24:42 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/08 18:05:02 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
+int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strdup(const char *s);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strjoin(char const *s1, char const *s2);

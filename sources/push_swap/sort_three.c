@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 18:46:04 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/03 18:13:26 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/08 10:12:32 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ static void	reverse_rotate_sequence(t_stacks stacks, bool *b_sorted)
 
 void	sort_three(t_stacks stacks, bool *b_sorted)
 {
-	index_stack(*stacks.a);
 	swap_sequence(stacks, b_sorted);
 	if (!rotate_sequence(stacks, b_sorted))
 		reverse_rotate_sequence(stacks, b_sorted);

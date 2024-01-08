@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:28:40 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/04 18:47:46 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/08 10:13:01 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ static void	sort_stack(t_stacks stacks)
 	size = ft_lstsize(*stacks.a);
 	b_sorted = true;
 	if (size == 2)
-		swap_a(stacks);
-	else if (size == 3)
+		return (swap_a(stacks));
+	index_stack(*stacks.a);
+	if (size == 3)
 		sort_three(stacks, &b_sorted);
 	else if (size == 5)
 		sort_five(stacks);

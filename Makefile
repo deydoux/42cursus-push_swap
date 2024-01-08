@@ -1,7 +1,9 @@
 NAME				=	push_swap
+BONUS_NAME			=	checker
 UTILS_NAME			=	push_swap_utils.a
 
 SUB_SOURCES_DIR		=	push_swap
+BONUS_SOURCES_DIR	=	checker
 UTILS_SOURCES_DIR	=	utils
 
 SOURCES				=	chunk_stack.c		\
@@ -10,6 +12,8 @@ SOURCES				=	chunk_stack.c		\
 						push_swap.c			\
 						sort_five.c			\
 						sort_three.c
+
+BONUS_SOURCES		=	checker.c
 
 UTILS_SOURCES		=	free_stacks.c			\
 						init_stacks.c			\
@@ -34,10 +38,11 @@ MKDIR				=	mkdir -p
 
 LIBFT				=	$(LIBFT_DIR)/libft.a
 OBJECTS				=	$(addprefix $(OBJECTS_DIR)/$(SUB_SOURCES_DIR)/,$(SOURCES:.c=.o))
+BONUS_OBJECTS		=	$(addprefix $(OBJECTS_DIR)/$(BONUS_SOURCES_DIR)/,$(BONUS_SOURCES:.c=.o))
 UTILS_OBJECTS		=	$(addprefix $(OBJECTS_DIR)/$(UTILS_SOURCES_DIR)/,$(UTILS_SOURCES:.c=.o))
-DEPENDENCIES		=	$(OBJECTS:.o=.d) $(UTILS_OBJECTS:.o=.d)
+DEPENDENCIES		=	$(OBJECTS:.o=.d) $(BONUS_OBJECTS:.o=.d) $(UTILS_OBJECTS:.o=.d)
 
-all					:	$(NAME)
+all					:	$(NAME) $(BONUS_NAME)
 
 -include 				$(DEPENDENCIES)
 
@@ -49,11 +54,12 @@ $(OBJECTS_DIR)/%.o	:	$(SOURCES_DIR)/%.c
 	$(CC) $(CFLAGS) -o $@ -c	$<
 
 $(UTILS_NAME)		:	$(UTILS_OBJECTS)
-	@$(MKDIR) $(@D)
 	$(AR) $(ARFLAGS) $@ $^
 
 $(NAME)				:	$(OBJECTS) $(UTILS_NAME) $(LIBFT)
-	@$(MKDIR) $(@D)
+	$(CC) $(CFLAGS) -o $@ $^
+
+$(BONUS_NAME)		:	$(BONUS_OBJECTS) $(UTILS_NAME) $(LIBFT)
 	$(CC) $(CFLAGS) -o $@ $^
 
 clean				:
@@ -62,7 +68,7 @@ clean				:
 
 fclean				:
 	$(MAKE) -C $(LIBFT_DIR) $@
-	$(RM) $(OBJECTS_DIR) $(NAME) $(UTILS_NAME)
+	$(RM) $(OBJECTS_DIR) $(NAME) $(BONUS_NAME) $(UTILS_NAME)
 
 re					:	fclean all
 

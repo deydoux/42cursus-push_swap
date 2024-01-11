@@ -6,11 +6,13 @@ SUB_SOURCES_DIR		=	push_swap
 BONUS_SOURCES_DIR	=	checker
 UTILS_SOURCES_DIR	=	utils
 
-SOURCES				=	chunk_stack.c		\
-						chunks_sort.c		\
-						index_stack.c		\
-						push_swap.c			\
-						sort_five.c			\
+SOURCES				=	chunk_stack.c	\
+						chunks_sort.c	\
+						deydoux_sort.c	\
+						index_stack.c	\
+						median_stacks.c	\
+						push_swap.c		\
+						sort_five.c		\
 						sort_three.c
 
 BONUS_SOURCES		=	checker.c

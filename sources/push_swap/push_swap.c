@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:28:40 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/11 14:37:52 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/11 15:24:39 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	sort_stack(t_stacks stacks)
 	else if (size == 5)
 		sort_five(stacks);
 	else
-		chunks_sort(stacks, size);
+		deydoux_sort(stacks, size);
 }
 
 int	main(int argc, char **argv)

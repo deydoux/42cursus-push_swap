@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 01:34:46 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/05 23:47:00 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/11 14:35:59 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,18 @@ static t_operation	get_rotation(t_list *stack, size_t min, size_t max)
 	return (rotate_a);
 }
 
-void	chunk_stack(size_t n, size_t size, t_stacks stacks)
+void	chunk_stack(size_t chunks, size_t size, t_stacks stacks)
 {
-	size_t		i;
+	size_t		current;
 	size_t		min;
 	size_t		max;
 	t_operation	rotation;
 
-	i = 0;
-	while (i < n)
+	current = 0;
+	while (current < chunks)
 	{
-		min = i * size;
-		max = ++i * size;
+		min = current * size;
+		max = ++current * size;
 		rotation = get_rotation(*stacks.a, min, max);
 		while (rotation)
 		{

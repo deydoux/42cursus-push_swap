@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 14:34:00 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/05 23:39:10 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/11 14:37:33 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,14 @@ static t_list	*elem_greater_than(int value, t_list *stack)
 	return (elem);
 }
 
-void	index_stack(t_list *stack)
+void	index_stack(t_list *stack, size_t size)
 {
 	t_list	*min;
 	size_t	index;
-	size_t	size;
 
 	min = min_elem(stack);
 	((t_elem *)min->content)->index = 0;
 	index = 1;
-	size = ft_lstsize(stack);
 	while (index < size)
 	{
 		min = elem_greater_than(((t_elem *)min->content)->value, stack);

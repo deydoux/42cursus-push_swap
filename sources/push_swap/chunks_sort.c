@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 21:20:56 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/08 10:12:48 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/11 14:32:13 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,11 @@ static t_operation	get_rotation(t_list *stack, size_t index)
 	return (rotate_b);
 }
 
-void	chunks_sort(t_stacks stacks)
+void	chunks_sort(t_stacks stacks, size_t size)
 {
-	size_t		size;
 	size_t		chunks;
 	t_operation	rotation;
 
-	size = ft_lstsize(*stacks.a);
 	chunks = size / MIN_CHUNK_SIZE;
 	if (chunks > MAX_CHUNKS)
 		chunks = MAX_CHUNKS;

@@ -44,7 +44,8 @@ BONUS_OBJECTS		=	$(addprefix $(OBJECTS_DIR)/$(BONUS_SOURCES_DIR)/,$(BONUS_SOURCE
 UTILS_OBJECTS		=	$(addprefix $(OBJECTS_DIR)/$(UTILS_SOURCES_DIR)/,$(UTILS_SOURCES:.c=.o))
 DEPENDENCIES		=	$(OBJECTS:.o=.d) $(BONUS_OBJECTS:.o=.d) $(UTILS_OBJECTS:.o=.d)
 
-all					:	$(NAME) $(BONUS_NAME)
+all					:	$(NAME) bonus
+bonus				:	$(BONUS_NAME)
 
 -include 				$(DEPENDENCIES)
 

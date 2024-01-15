@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 07:19:02 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/15 07:27:56 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:06:19 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ t_list	*simulate_rotations(size_t n, t_list *stack)
 {
 	t_list	*start;
 
+	if (!stack)
+		return (NULL);
 	start = stack;
 	while (n--)
 	{

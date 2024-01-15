@@ -8,9 +8,7 @@ UTILS_SOURCES_DIR	=	utils
 
 SOURCES				=	chunk_stack.c					\
 						chunks_sort.c					\
-						deydoux_sort.c					\
 						index_stack.c					\
-						median_stacks.c					\
 						push_swap.c						\
 						simulate_reverse_rotations.c	\
 						simulate_rotations.c			\

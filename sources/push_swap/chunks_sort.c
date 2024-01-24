@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 21:20:56 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/11 14:32:13 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/24 15:58:40 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	chunks_sort(t_stacks stacks, size_t size)
 	size_t		chunks;
 	t_operation	rotation;
 
-	chunks = size / MIN_CHUNK_SIZE;
+	chunks = size / MIN_CHUNK_SIZE + (size % MIN_CHUNK_SIZE != 0);
 	if (chunks > MAX_CHUNKS)
 		chunks = MAX_CHUNKS;
 	chunk_stack(chunks, size / chunks + (size % chunks != 0), stacks);

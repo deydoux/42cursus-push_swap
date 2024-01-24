@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 07:23:10 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/24 14:40:55 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/24 16:54:58 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 
 # define MIN_CHUNK_SIZE 20
 # define MAX_CHUNKS 11
+
+typedef struct s_elem
+{
+	int		value;
+	size_t	index;
+}			t_elem;
 
 typedef void	(*t_operation)(t_stacks);
 

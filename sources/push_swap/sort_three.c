@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 18:46:04 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/08 10:12:32 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/24 14:43:11 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,14 @@ static void	reverse_rotate_sequence(t_stacks stacks, bool *b_sorted)
 	}
 }
 
-void	sort_three(t_stacks stacks, bool *b_sorted)
+void	sort_three(t_stacks stacks)
 {
-	swap_sequence(stacks, b_sorted);
-	if (!rotate_sequence(stacks, b_sorted))
-		reverse_rotate_sequence(stacks, b_sorted);
+	bool	b_sorted;
+
+	b_sorted = !is_sorted_stack(*stacks.b);
+	swap_sequence(stacks, &b_sorted);
+	if (!rotate_sequence(stacks, &b_sorted))
+		reverse_rotate_sequence(stacks, &b_sorted);
+	if (!b_sorted)
+		swap_b(stacks);
 }

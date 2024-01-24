@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 23:27:44 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/11 14:38:05 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/24 15:04:42 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ static t_operation	get_rotation(t_list *stack, bool pushed)
 void	sort_five(t_stacks stacks)
 {
 	t_operation	rotation;
-	bool		b_sorted;
 
 	rotation = get_rotation(*stacks.a, false);
 	while (((t_elem *)(*stacks.a)->content)->index > 1)
@@ -50,11 +49,8 @@ void	sort_five(t_stacks stacks)
 	while (((t_elem *)(*stacks.a)->content)->index > 1)
 		rotation(stacks);
 	push_b(stacks);
-	b_sorted = is_sorted_stack(*stacks.b);
 	index_stack(*stacks.a, 3);
-	sort_three(stacks, &b_sorted);
-	if (!b_sorted)
-		swap_b(stacks);
+	sort_three(stacks);
 	push_a(stacks);
 	push_a(stacks);
 }

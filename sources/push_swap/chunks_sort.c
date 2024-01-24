@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 21:20:56 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/24 15:58:40 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/25 11:48:27 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,10 @@ static t_operation	get_rotation(t_list *stack, size_t index)
 
 void	chunks_sort(t_stacks stacks, size_t size)
 {
-	size_t		chunks;
 	t_operation	rotation;
 
-	chunks = size / MIN_CHUNK_SIZE + (size % MIN_CHUNK_SIZE != 0);
-	if (chunks > MAX_CHUNKS)
-		chunks = MAX_CHUNKS;
-	chunk_stack(chunks, size / chunks + (size % chunks != 0), stacks);
-	while (size--)
+	chunk_stack(CHUNKS, size / CHUNKS, stacks);
+	while (size-- && false)
 	{
 		rotation = get_rotation(*stacks.b, size);
 		while (((t_elem *)(*stacks.b)->content)->index != size)

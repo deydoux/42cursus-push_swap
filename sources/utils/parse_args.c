@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 13:11:06 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/05 22:40:06 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/24 14:47:40 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static bool	atoi_safe(char *s, int *n)
 	u = 0;
 	if (*s == '-' || *s == '+')
 		*n -= 2 * (*s++ == '-');
+	if (!ft_isdigit(*s))
+		return (true);
 	while (ft_isdigit(*s))
 	{
 		u = u * 10 + *s++ - '0';

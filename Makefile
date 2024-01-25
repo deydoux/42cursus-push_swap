@@ -7,10 +7,10 @@ BONUS_SOURCES_DIR	=	checker
 UTILS_SOURCES_DIR	=	utils
 
 SOURCES				=	chunk_stack.c	\
-						chunks_sort.c	\
 						compute_moves.c	\
 						greater_elem.c	\
 						index_stack.c	\
+						predict_sort.c	\
 						push_swap.c		\
 						sort_five.c		\
 						sort_three.c

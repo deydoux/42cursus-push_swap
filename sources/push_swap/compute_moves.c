@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 17:49:16 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/25 15:17:56 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/25 16:28:25 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,17 +63,17 @@ static size_t	sum_moves(t_moves moves)
 	return (moves.rb);
 }
 
-t_moves	compute_moves(t_list *stack, size_t pos, size_t middle, t_stacks stacks)
+t_moves	compute_moves(t_list *b, size_t position, size_t half, t_stacks stacks)
 {
 	t_moves	moves;
 	t_moves	next_moves;
 
-	compute_a_moves(((t_elem *)stack->content)->value, *stacks.a, &moves);
-	compute_b_moves(pos, middle, &moves);
+	compute_a_moves(((t_elem *)b->content)->value, *stacks.a, &moves);
+	compute_b_moves(position, half, &moves);
 	moves.sum = sum_moves(moves);
-	if (!stack->next)
+	if (!b->next)
 		return (moves);
-	next_moves = compute_moves(stack->next, pos + 1, middle, stacks);
+	next_moves = compute_moves(b->next, position + 1, half, stacks);
 	if (moves.sum > next_moves.sum)
 		return (next_moves);
 	return (moves);

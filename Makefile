@@ -8,6 +8,7 @@ UTILS_SOURCES_DIR	=	utils
 
 SOURCES				=	chunk_stack.c	\
 						chunks_sort.c	\
+						greater_elem.c	\
 						index_stack.c	\
 						push_swap.c		\
 						sort_five.c		\

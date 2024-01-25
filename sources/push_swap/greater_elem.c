@@ -1,43 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   index_stack.c                                      :+:      :+:    :+:   */
+/*   greater_elem.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/23 14:34:00 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/25 14:47:57 by deydoux          ###   ########.fr       */
+/*   Created: 2024/01/25 14:35:23 by deydoux           #+#    #+#             */
+/*   Updated: 2024/01/25 14:47:37 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_elem	*min_elem(t_list *stack)
+t_elem	*greater_elem(int value, t_list *stack)
 {
-	t_elem	*min;
+	t_elem	*elem;
 
-	min = stack->content;
+	while (stack && ((t_elem *)stack->content)->value <= value)
+		stack = stack->next;
+	elem = stack->content;
 	stack = stack->next;
 	while (stack)
 	{
-		if (((t_elem *)stack->content)->value < min->value)
-			min = stack->content;
+		if (((t_elem *)stack->content)->value < elem->value
+			&& ((t_elem *)stack->content)->value > value)
+			elem = stack->content;
 		stack = stack->next;
 	}
-	return (min);
-}
-
-void	index_stack(t_list *stack, size_t size)
-{
-	t_elem	*min;
-	size_t	index;
-
-	min = min_elem(stack);
-	min->index = 0;
-	index = 1;
-	while (index < size)
-	{
-		min = greater_elem(min->value, stack);
-		min->index = index++;
-	}
+	return (elem);
 }

@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 01:34:46 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/11 14:35:59 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/25 16:10:38 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ void	chunk_stack(size_t chunks, size_t size, t_stacks stacks)
 		min = current * size;
 		max = ++current * size;
 		rotation = get_rotation(*stacks.a, min, max);
-		while (rotation)
+		while (*stacks.a && (*stacks.a)->next && (*stacks.a)->next->next
+			&& rotation)
 		{
 			while (!in_chunk(*stacks.a, min, max))
 				rotation(stacks);

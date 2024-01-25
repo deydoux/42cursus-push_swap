@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:35:23 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/25 14:47:37 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/25 15:05:29 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ t_elem	*greater_elem(int value, t_list *stack)
 
 	while (stack && ((t_elem *)stack->content)->value <= value)
 		stack = stack->next;
+	if (!stack)
+		return (NULL);
 	elem = stack->content;
 	stack = stack->next;
 	while (stack)

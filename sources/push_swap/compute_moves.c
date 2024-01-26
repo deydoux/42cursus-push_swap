@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 17:49:16 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/26 15:35:49 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/26 17:39:18 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ t_moves	compute_moves(t_list *stack, t_stacks stacks, size_t position)
 	t_moves	moves;
 	t_moves	next_moves;
 
-	compute_a_moves(((t_elem *)stack->content)->value, *stacks.a, &moves);
 	compute_b_moves(stack, position, &moves);
+	compute_a_moves(((t_elem *)stack->content)->value, *stacks.a, &moves);
 	moves.sum = sum_moves(moves);
 	if (!stack->next)
 		return (moves);

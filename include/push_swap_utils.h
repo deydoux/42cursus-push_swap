@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 22:35:42 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/24 17:06:38 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/26 17:36:25 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,11 @@
 # include "libft.h"
 # include <stdbool.h>
 
-# ifndef PUSH_SWAP_H
-
 typedef struct s_elem
 {
-	int	value;
-}		t_elem;
-
-# endif
+	int		value;
+	size_t	index;
+}			t_elem;
 
 typedef struct s_stacks
 {

@@ -6,19 +6,13 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 07:23:10 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/26 16:46:12 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/26 17:36:21 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "push_swap_utils.h"
-
-typedef struct s_elem
-{
-	int		value;
-	size_t	index;
-}			t_elem;
 
 typedef struct s_moves
 {

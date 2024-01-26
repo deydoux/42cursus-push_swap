@@ -1,16 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   predict_sort.c                                     :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 21:20:56 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/26 16:02:31 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/26 17:10:48 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static bool	swap_three(t_list *stack)
+{
+	int	first;
+	int	second;
+	int	third;
+
+	first = ((t_elem *)stack->content)->value;
+	second = ((t_elem *)stack->next->content)->value;
+	third = ((t_elem *)stack->next->next->content)->value;
+	return (
+		(first < third
+			&& (
+				(first < second && first < third && second > third)
+				|| (first > second && second < third)
+			)
+		)
+		|| (first > second && second > third)
+	);
+}
 
 static void	do_b_rotations(t_moves *moves, t_stacks stacks)
 {
@@ -59,12 +79,14 @@ static t_operation	final_rotation(t_list *stack)
 	return (rotate_a);
 }
 
-void	predict_sort(t_stacks stacks, size_t size)
+void	sort(t_stacks stacks, size_t size)
 {
 	t_moves		moves;
 	t_operation	rotation;
 
-	chunk_stack(size / 3, stacks);
+	create_chunks(size / 3, stacks);
+	if (swap_three(*stacks.a))
+		swap_a(stacks);
 	while (*stacks.b)
 	{
 		moves = compute_moves(*stacks.b, stacks, 0);

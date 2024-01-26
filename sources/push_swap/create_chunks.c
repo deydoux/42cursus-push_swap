@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   chunk_stack.c                                      :+:      :+:    :+:   */
+/*   create_chunks.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 01:34:46 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/25 16:19:14 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/26 16:46:01 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ static t_operation	get_rotation(t_list *stack, size_t min, size_t max)
 	size_t	rotations;
 	size_t	reverse_rotations;
 
+	if (!(stack && stack->next && stack->next->next && stack->next->next->next))
+		return (NULL);
 	rotations = 0;
 	while (stack && !in_chunk(stack, min, max))
 	{
@@ -47,7 +49,7 @@ static t_operation	get_rotation(t_list *stack, size_t min, size_t max)
 	return (rotate_a);
 }
 
-void	chunk_stack(size_t size, t_stacks stacks)
+void	create_chunks(size_t size, t_stacks stacks)
 {
 	size_t		current;
 	size_t		min;
@@ -60,8 +62,7 @@ void	chunk_stack(size_t size, t_stacks stacks)
 		min = current * size;
 		max = ++current * size;
 		rotation = get_rotation(*stacks.a, min, max);
-		while (*stacks.a && (*stacks.a)->next && (*stacks.a)->next->next
-			&& rotation)
+		while (rotation)
 		{
 			while (!in_chunk(*stacks.a, min, max))
 				rotation(stacks);

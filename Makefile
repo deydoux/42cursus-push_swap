@@ -6,14 +6,12 @@ SUB_SOURCES_DIR		=	push_swap
 BONUS_SOURCES_DIR	=	checker
 UTILS_SOURCES_DIR	=	utils
 
-SOURCES				=	chunk_stack.c	\
-						compute_moves.c	\
+SOURCES				=	compute_moves.c	\
+						create_chunks.c	\
 						greater_elem.c	\
 						index_stack.c	\
-						predict_sort.c	\
 						push_swap.c		\
-						sort_five.c		\
-						sort_three.c
+						sort.c
 
 BONUS_SOURCES		=	checker.c
 
@@ -32,7 +30,7 @@ INCLUDE_DIR			=	include
 OBJECTS_DIR			=	.objects
 
 CC					=	cc
-CFLAGS				=	-Wall -Wextra -Werror -MMD -I $(INCLUDE_DIR)
+CFLAGS				=	-Wall -Wextra -Werror -MMD -I $(INCLUDE_DIR) -g
 AR					=	ar
 ARFLAGS				=	-c -r -s
 RM					=	rm -rf

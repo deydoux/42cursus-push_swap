@@ -42,14 +42,14 @@ BONUS_OBJECTS		=	$(addprefix $(OBJECTS_DIR)/$(BONUS_SOURCES_DIR)/,$(BONUS_SOURCE
 UTILS_OBJECTS		=	$(addprefix $(OBJECTS_DIR)/$(UTILS_SOURCES_DIR)/,$(UTILS_SOURCES:.c=.o))
 DEPENDENCIES		=	$(OBJECTS:.o=.d) $(BONUS_OBJECTS:.o=.d) $(UTILS_OBJECTS:.o=.d)
 
-all					:	$(NAME) bonus
+all					:	$(LIBFT_DIR) $(NAME) bonus
 
 bonus				:	$(BONUS_NAME)
 
 -include 				$(DEPENDENCIES)
 
-$(LIBFT)			:
-	$(MAKE) -C $(@D) $(@F)
+$(LIBFT_DIR)		:
+	$(MAKE) --no-print-directory -C	$@
 
 $(OBJECTS_DIR)/%.o	:	$(SOURCES_DIR)/%.c
 	@$(MKDIR) $(@D)
@@ -74,4 +74,4 @@ fclean				:
 
 re					:	fclean all
 
-.PHONY				:	all bonus clean fclean re
+.PHONY				:	all bonus clean fclean re $(LIBFT_DIR)

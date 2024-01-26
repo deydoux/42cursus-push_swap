@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 14:41:19 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/08 18:23:57 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/26 17:44:06 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int	main(int argc, char **argv)
 	{
 		if (switch_operation(operation, stacks))
 			return (put_error(stacks));
+		free(operation);
 		operation = get_next_line(0);
 	}
 	if (is_sorted_stack(*stacks.a) && !*stacks.b)

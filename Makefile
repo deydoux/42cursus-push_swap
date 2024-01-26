@@ -30,7 +30,7 @@ INCLUDE_DIR			=	include
 OBJECTS_DIR			=	.objects
 
 CC					=	cc
-CFLAGS				=	-Wall -Wextra -Werror -MMD -I $(INCLUDE_DIR) -g
+CFLAGS				=	-Wall -Wextra -Werror -MMD -I $(INCLUDE_DIR)
 AR					=	ar
 ARFLAGS				=	-c -r -s
 RM					=	rm -rf

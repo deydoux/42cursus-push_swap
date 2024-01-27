@@ -6,11 +6,33 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 17:49:16 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/26 17:39:18 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/27 14:51:19 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	compute_b_moves(t_list *stack, size_t position, t_moves *moves)
+{
+	size_t	reverse;
+
+	reverse = 0;
+	while (stack)
+	{
+		reverse++;
+		stack = stack->next;
+	}
+	if (position < reverse)
+	{
+		moves->rb = position;
+		moves->rrb = false;
+	}
+	else
+	{
+		moves->rb = reverse;
+		moves->rrb = true;
+	}
+}
 
 static void	compute_a_moves(int value, t_list *stack, t_moves *moves)
 {
@@ -37,28 +59,6 @@ static void	compute_a_moves(int value, t_list *stack, t_moves *moves)
 	{
 		moves->ra = reverse;
 		moves->rra = true;
-	}
-}
-
-static void	compute_b_moves(t_list *stack, size_t position, t_moves *moves)
-{
-	size_t	reverse;
-
-	reverse = 0;
-	while (stack)
-	{
-		reverse++;
-		stack = stack->next;
-	}
-	if (position < reverse)
-	{
-		moves->rb = position;
-		moves->rrb = false;
-	}
-	else
-	{
-		moves->rb = reverse;
-		moves->rrb = true;
 	}
 }
 

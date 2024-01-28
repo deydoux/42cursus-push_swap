@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 07:23:10 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/26 17:36:21 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/28 19:10:43 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ typedef struct s_moves
 	bool	rrb;
 	size_t	sum;
 }			t_moves;
-
-typedef void	(*t_operation)(t_stacks);
 
 t_moves	compute_moves(t_list *stack, t_stacks stacks, size_t position);
 void	create_chunks(size_t size, t_stacks stacks);

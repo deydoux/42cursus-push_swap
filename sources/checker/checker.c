@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 14:41:19 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/26 17:44:06 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/28 19:27:36 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,49 +19,42 @@ static int	put_error(t_stacks stacks)
 	return (1);
 }
 
-static bool	switch_operation(char *operation, t_stacks stacks)
+static bool	switch_operation(char *instruction, t_stacks stacks)
 {
-	if (!ft_strcmp(operation, "sa\n"))
-		swap_a(stacks);
-	else if (!ft_strcmp(operation, "sb\n"))
-		swap_b(stacks);
-	else if (!ft_strcmp(operation, "ss\n"))
-		swap_stacks(stacks);
-	else if (!ft_strcmp(operation, "pa\n"))
-		push_a(stacks);
-	else if (!ft_strcmp(operation, "pb\n"))
-		push_b(stacks);
-	else if (!ft_strcmp(operation, "ra\n"))
-		rotate_a(stacks);
-	else if (!ft_strcmp(operation, "rb\n"))
-		rotate_b(stacks);
-	else if (!ft_strcmp(operation, "rr\n"))
-		rotate_stacks(stacks);
-	else if (!ft_strcmp(operation, "rra\n"))
-		reverse_rotate_a(stacks);
-	else if (!ft_strcmp(operation, "rrb\n"))
-		reverse_rotate_b(stacks);
-	else if (!ft_strcmp(operation, "rrr\n"))
-		reverse_rotate_stacks(stacks);
-	else
-		return (true);
-	return (false);
+	const char			*instructions[] = {"sa\n", "sb\n", "ss\n", "pa\n",
+		"pb\n", "ra\n", "rb\n", "rr\n", "rra\n", "rrb\n", "rrr\n", NULL};
+	const t_operation	operations[] = {swap_a, swap_b, swap_stacks, push_a,
+		push_b, rotate_a, rotate_b, rotate_stacks, reverse_rotate_a,
+		reverse_rotate_b, reverse_rotate_stacks};
+	size_t				i;
+
+	i = 0;
+	while (instructions[i])
+	{
+		if (!ft_strcmp(instruction, instructions[i]))
+		{
+			operations[i](stacks);
+			return (false);
+		}
+		i++;
+	}
+	return (true);
 }
 
 int	main(int argc, char **argv)
 {
 	t_stacks	stacks;
-	char		*operation;
+	char		*instruction;
 
 	if (init_stacks(argc - 1, argv + 1, &stacks))
 		return (put_error(stacks));
-	operation = get_next_line(0);
-	while (operation)
+	instruction = get_next_line(0);
+	while (instruction)
 	{
-		if (switch_operation(operation, stacks))
+		if (switch_operation(instruction, stacks))
 			return (put_error(stacks));
-		free(operation);
-		operation = get_next_line(0);
+		free(instruction);
+		instruction = get_next_line(0);
 	}
 	if (is_sorted_stack(*stacks.a) && !*stacks.b)
 		ft_putstr_fd("OK\n", 1);

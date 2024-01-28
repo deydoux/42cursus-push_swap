@@ -42,14 +42,11 @@ BONUS_OBJECTS		=	$(addprefix $(OBJECTS_DIR)/$(BONUS_SOURCES_DIR)/,$(BONUS_SOURCE
 UTILS_OBJECTS		=	$(addprefix $(OBJECTS_DIR)/$(UTILS_SOURCES_DIR)/,$(UTILS_SOURCES:.c=.o))
 DEPENDENCIES		=	$(OBJECTS:.o=.d) $(BONUS_OBJECTS:.o=.d) $(UTILS_OBJECTS:.o=.d)
 
-all					:	$(LIBFT_DIR) $(NAME) bonus
+all					:	$(NAME) bonus
 
 bonus				:	$(BONUS_NAME)
 
 -include 				$(DEPENDENCIES)
-
-$(LIBFT_DIR)		:
-	$(MAKE) --no-print-directory -C	$@
 
 $(OBJECTS_DIR)/%.o	:	$(SOURCES_DIR)/%.c
 	@$(MKDIR) $(@D)
@@ -58,6 +55,11 @@ $(OBJECTS_DIR)/%.o	:	$(SOURCES_DIR)/%.c
 $(UTILS_NAME)		:	$(UTILS_OBJECTS)
 	$(AR) $(ARFLAGS) $@ $^
 
+$(LIBFT_DIR)		:
+	$(MAKE) --no-print-directory -C	$@
+
+$(LIBFT)			:	$(LIBFT_DIR)
+
 $(NAME)				:	$(OBJECTS) $(UTILS_NAME) $(LIBFT)
 	$(CC) $(CFLAGS) -o $@ $^
 
@@ -65,11 +67,11 @@ $(BONUS_NAME)		:	$(BONUS_OBJECTS) $(UTILS_NAME) $(LIBFT)
 	$(CC) $(CFLAGS) -o $@ $^
 
 clean				:
-	$(MAKE) -C $(LIBFT_DIR) $@
+	$(MAKE) --no-print-directory -C	$(LIBFT_DIR) $@
 	$(RM) $(OBJECTS_DIR)
 
 fclean				:
-	$(MAKE) -C $(LIBFT_DIR) $@
+	$(MAKE) --no-print-directory -C	$(LIBFT_DIR) $@
 	$(RM) $(OBJECTS_DIR) $(NAME) $(BONUS_NAME) $(UTILS_NAME)
 
 re					:	fclean all

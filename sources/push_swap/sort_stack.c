@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   sort_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 21:20:56 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/26 17:10:48 by deydoux          ###   ########.fr       */
+/*   Updated: 2024/01/29 13:22:44 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,14 @@ static t_operation	final_rotation(t_list *stack)
 	return (rotate_a);
 }
 
-void	sort(t_stacks stacks, size_t size)
+void	sort_stack(t_stacks stacks, size_t size)
 {
 	t_moves		moves;
 	t_operation	rotation;
 
+	if (size == 2)
+		return (swap_a(stacks));
+	index_stack(*stacks.a, size);
 	create_chunks(size / 3, stacks);
 	if (swap_three(*stacks.a))
 		swap_a(stacks);

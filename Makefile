@@ -11,7 +11,7 @@ SOURCES				=	compute_moves.c	\
 						greater_elem.c	\
 						index_stack.c	\
 						push_swap.c		\
-						sort.c
+						sort_stack.c
 
 BONUS_SOURCES		=	checker.c
 

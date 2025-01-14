@@ -4,6 +4,9 @@ This project involves sorting data on a stack, with a limited set of instruction
 ## About the project
 The push_swap project is a challenging algorithmic task that requires implementing a sorting algorithm using two stacks (stack A and stack B) and a limited set of operations. The goal is to sort a random list of integers in ascending order using the minimum number of operations possible.
 
+[Visualization.webm](https://github.com/user-attachments/assets/36dd6e68-f096-4280-b2c4-27ea9b6e2f68)
+<p align="center"><em>100 elements sort visualization</em></p>
+
 ### Operations set
 - **`sa`, `sb` and `ss`:** Swap the first 2 elements at the top of stack A, stack B or both
 - **`pa`:** Push the first element at the top of stack B to stack A

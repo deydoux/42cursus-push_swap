@@ -34,7 +34,8 @@ I implemented the following algorithm to sort the elements:
         - Scan **stack B** to find optimal element to push
         - Calculate total cost (rotations needed) for each possible move
         - Choose element requiring minimum combined rotations
-        - Execute rotations (`rb`/`rrb`) to position chosen element
+        - Execute optimal rotations on both stacks simultaneously using `rr` or`rrr` when possible
+        - Position chosen element at top using remaining individual rotations if needed (`ra`/`rra` and `rb`/`rrb`)
         - Push element to **stack A** (`pa`)
     2. Repeat until **stack B** is empty
 4. Final rotations

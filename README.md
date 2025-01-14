@@ -17,6 +17,29 @@ The push_swap project is a challenging algorithmic task that requires implementi
 - **`ra`, `rb` and `rr`:** Rotate all elements up by one of stack A, stack B or both (the first element becomes the last one)
 - **`rra`, `rrb` and `rrr`:** Rotate all elements down by one of stack A, stack B or both (the last element becomes the first one)
 
+### Algorithm
+I implemented the following algorithm to sort the elements:
+1. Divide **stack A** into 3 chunks and push them to **stack B**
+    1. Calculate chunk size based on total elements
+    2. For each chunk (starting from smallest numbers):
+        - Find elements within chunk range using index comparison
+        - Calculate optimal rotation direction (`ra` or `rra`)
+        - Rotate **stack A** until target element is at top
+        - Push element to **stack B** (`pb`)
+        - Repeat until all chunk elements are moved
+2. Handle remaining elements in **stack A**
+    - If only 2-3 elements remain, sort them directly using `sa` if needed
+3. Push elements back to **stack A** optimally
+    1. For each push operation:
+        - Scan **stack B** to find optimal element to push
+        - Calculate total cost (rotations needed) for each possible move
+        - Choose element requiring minimum combined rotations
+        - Execute rotations (`rb`/`rrb`) to position chosen element
+        - Push element to **stack A** (`pa`)
+    2. Repeat until **stack B** is empty
+4. Final rotations
+    - Perform final rotations on **stack A** if needed to ensure smallest element is at top
+
 ## Credits
 <img align="right" src="https://github.com/user-attachments/assets/b23ea7c1-e3fa-4900-ab91-a3f2fd6524a5">
 

@@ -1,4 +1,5 @@
 <div align="center">
+  <img height="128" src="https://github.com/user-attachments/assets/162afe25-a123-48d5-b8e2-b5e365940997">
   <h1>push_swap</h1>
   <p>This project involves sorting data on a stack, with a limited set of instructions, and the smallest number of moves. To make this happen, you will have to manipulate various sorting algorithms and choose the most appropriate solution(s) for optimized data sorting.</p>
 </div>

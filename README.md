@@ -16,3 +16,9 @@ The push_swap project is a challenging algorithmic task that requires implementi
 - **`pb`:** Push the first element at the top of stack A to stack B
 - **`ra`, `rb` and `rr`:** Rotate all elements up by one of stack A, stack B or both (the first element becomes the last one)
 - **`rra`, `rrb` and `rrr`:** Rotate all elements down by one of stack A, stack B or both (the last element becomes the first one)
+
+## Credits
+<img align="right" src="https://github.com/user-attachments/assets/b23ea7c1-e3fa-4900-ab91-a3f2fd6524a5">
+
+- [42](https://42.fr/)
+- [push_swap_visualizer](https://github.com/o-reo/push_swap_visualizer)

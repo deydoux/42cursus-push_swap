@@ -1,5 +1,7 @@
-# push_swap
-This project involves sorting data on a stack, with a limited set of instructions, and the smallest number of moves. To make this happen, you will have to manipulate various sorting algorithms and choose the most appropriate solution(s) for optimized data sorting.
+<div align="center">
+  <h1>push_swap</h1>
+  <p>This project involves sorting data on a stack, with a limited set of instructions, and the smallest number of moves. To make this happen, you will have to manipulate various sorting algorithms and choose the most appropriate solution(s) for optimized data sorting.</p>
+</div>
 
 ## About the project
 The push_swap project is a challenging algorithmic task that requires implementing a sorting algorithm using two stacks (stack A and stack B) and a limited set of operations. The goal is to sort a random list of integers in ascending order using the minimum number of operations possible.

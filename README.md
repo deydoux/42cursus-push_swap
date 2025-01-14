@@ -18,7 +18,7 @@ The push_swap project is a challenging algorithmic task that requires implementi
 - **`rra`, `rrb` and `rrr`:** Rotate all elements down by one of stack A, stack B or both (the last element becomes the first one)
 
 ### Algorithm
-I implemented the following algorithm to sort the elements:
+I implemented an algorithm designed to sort the stack with a minimal number of operations. The algorithm is based on the following steps:
 1. Divide **stack A** into 3 chunks and push them to **stack B**
     1. Calculate chunk size based on total elements
     2. For each chunk (starting from smallest numbers):
@@ -40,6 +40,15 @@ I implemented the following algorithm to sort the elements:
     2. Repeat until **stack B** is empty
 4. Final rotations
     - Perform final rotations on **stack A** if needed to ensure smallest element is at top
+
+### Skill learned
+- **Algorithm Design:** Developed and optimized a complex sorting algorithm with specific constraints
+- **Data Structures:** Deep understanding of stack operations and linked list manipulation
+- **Optimization:** Learned to analyze and minimize algorithmic complexity and operation count
+- **Problem Solving:** Breaking down a complex problem into manageable sub-problems
+- **Code Organization:** Structuring code for maintainability and readability
+- **Performance Analysis:** Evaluating and improving algorithm efficiency
+- **Testing & Debugging:** Systematic testing and debugging of edge cases
 
 ## Credits
 <img align="right" src="https://github.com/user-attachments/assets/b23ea7c1-e3fa-4900-ab91-a3f2fd6524a5">

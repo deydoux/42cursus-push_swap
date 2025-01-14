@@ -6,7 +6,7 @@
 /*   By: deydoux <deydoux@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 17:49:16 by deydoux           #+#    #+#             */
-/*   Updated: 2024/01/27 14:51:19 by deydoux          ###   ########.fr       */
+/*   Updated: 2025/01/14 14:18:10 by deydoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,21 @@ static void	compute_b_moves(t_list *stack, size_t position, t_moves *moves)
 	}
 }
 
+static t_elem	*min_elem(t_list *stack)
+{
+	t_elem	*elem;
+
+	elem = stack->content;
+	stack = stack->next;
+	while (stack)
+	{
+		if (((t_elem *)stack->content)->value < elem->value)
+			elem = stack->content;
+		stack = stack->next;
+	}
+	return (elem);
+}
+
 static void	compute_a_moves(int value, t_list *stack, t_moves *moves)
 {
 	t_elem	*elem;
@@ -43,7 +58,7 @@ static void	compute_a_moves(int value, t_list *stack, t_moves *moves)
 	moves->ra = 0;
 	moves->rra = false;
 	if (!elem)
-		return ;
+		elem = min_elem(stack);
 	while (stack->content != elem)
 	{
 		moves->ra++;

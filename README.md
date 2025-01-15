@@ -50,7 +50,7 @@ I implemented an algorithm designed to sort the stack with a minimal number of o
 - **Performance Analysis:** Evaluating and improving algorithm efficiency
 - **Testing & Debugging:** Systematic testing and debugging of edge cases
 
-## Credits
+## References
 <img align="right" src="https://github.com/user-attachments/assets/b23ea7c1-e3fa-4900-ab91-a3f2fd6524a5">
 
 - [42](https://42.fr/)
